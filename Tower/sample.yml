@@ -1,0 +1,11 @@
+---
+ - hosts: all
+   tasks:
+     - debug:
+         msg: "Running from Ansible Tower/Controller"
+
+     - command: ls /etc
+       register: result
+
+     - debug:
+         var: result.stdout_lines
